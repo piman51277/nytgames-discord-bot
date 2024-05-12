@@ -2,7 +2,7 @@ import { GameBase, GameMetadata, GameVerifyResult } from "./GameBase";
 
 //matches even if the result is in the middle of the message
 const PATTERN = new RegExp(
-  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]+)/gu,
+  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]{2,})/gu,
   "u"
 );
 
