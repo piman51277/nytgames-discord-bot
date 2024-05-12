@@ -1,8 +1,10 @@
 import { GameBase, GameMetadata, GameVerifyResult } from "./GameBase";
 
 //matches even if the result is in the middle of the message
+//the minimum number of chars that follow is 19 (perfect game)
+//the maximum number is chars is 34 (3 mistakes, all correct)
 const PATTERN = new RegExp(
-  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]{2,})/gu,
+  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]{19,34})/gu,
   "u"
 );
 
