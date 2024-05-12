@@ -1,6 +1,6 @@
 import { GameBase, GameMetadata, GameVerifyResult } from "./GameBase";
 
-//Matches even if the result is in the middle of the message
+//matches even if the result is in the middle of the message
 const PATTERN = new RegExp(
   /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]+)/gu,
   "u"
@@ -14,7 +14,7 @@ const CONN_START_TIME = "2023-06-12T00:00:00.000Z";
 const ONE_DAY = 1000 * 60 * 60 * 24;
 
 //maximum allowed deviation from the current date.
-//(Set to + - 24 hours so I don't want to deal with timezone hijinks)
+//(Set to 24 hours so I don't want to deal with timezone hijinks)
 const TIME_EPSILON = ONE_DAY;
 
 //matches one row
@@ -104,9 +104,9 @@ export class ConnectionsGame extends GameBase {
 
       //are all four chars the same?
       if (new Set(row).size === 1) {
-        //this is a hack to work around Unicode and that fact that these chars
-        //are surrogate pairs this converts to an array of strings because
-        //arrays handle pairs correcly, unlike .charAt() or directly indexing
+        //this is a hack to work around Unicode and the fact that these chars
+        //are surrogate pairs. This converts to an array of strings because
+        //arrays handle pairs correctly, unlike .charAt() or directly indexing
         const firstChar = [...row][0];
         colorsCompleted[firstChar] = true;
         completed++;
@@ -138,7 +138,7 @@ export class ConnectionsGame extends GameBase {
   public static getScore(message: string): number {
     const matches = PATTERN.exec(message);
 
-    //this should never have to be triggered, as messages should be verified
+    //this should never be triggered, as messages should be verified
     //before a score is calculated.
     if (!matches) {
       return 0;
