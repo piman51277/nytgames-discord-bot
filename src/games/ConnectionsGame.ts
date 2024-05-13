@@ -29,7 +29,7 @@ const FOUR_ELEM_PATTERN = new RegExp(/^[🟨🟩🟪🟦]{4}$/u, "u");
  */
 export class ConnectionsGame extends GameBase {
   gameTypeID = "connections";
-  scoreSortDescending = false;
+  scoreSortDescending = true;
   gameName = "Connections";
   gameDescription = "https://www.nytimes.com/games/connections";
   gameScoringDescription =
