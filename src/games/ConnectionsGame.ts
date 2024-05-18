@@ -4,8 +4,8 @@ import { GameBase, GameMetadata, GameVerifyResult } from "./GameBase";
 //the minimum number of chars that follow is 19 (perfect game)
 //the maximum number is chars is 34 (3 mistakes, all correct)
 const PATTERN = new RegExp(
-  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]{19,34})/gu,
-  "gu"
+  /Connections \nPuzzle #(\d+)\n([🟨🟩🟪🟦\n]{19,42})/u,
+  "u"
 );
 
 //first day of Connections, Puzzle #1. This is used to check if a
